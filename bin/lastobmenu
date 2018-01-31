@@ -14,11 +14,12 @@ done
 
 "$2" &
 
-[ "$found" = 1 ] && exit 0
+[ "$found" = 1 ] && exit 0 # do not ignored lastes
 
+[ ! -f $LAST_FILE ] && echo " " >> $LAST_FILE
 sed -i '1 i '$1 $LAST_FILE
 
-sort -u $LAST_FILE | head -n5 > $LAST_FILE".bak"
+cat $LAST_FILE | uniq | head -n5 > $LAST_FILE".bak"
 mv $LAST_FILE".bak" $LAST_FILE
 
 exit 0
