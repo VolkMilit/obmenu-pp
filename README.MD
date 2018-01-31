@@ -6,7 +6,9 @@ You can configure some thing in config.h, ofc you need to recompile every time y
 
 #### build
 $ mkdir build && cd build
+
 $ cmake ..
+
 $ make
 
 #### todo
