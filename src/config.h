@@ -11,7 +11,9 @@ HOME + "/.icons/" + THEME + "/apps/scalable/" + icon, \
 "/usr/lib/python2.7/dist-packages/" + icon + "/data/pixmaps/" + icon, \
 "/usr/share/local/icons/hicolor/32x32/apps/" + icon, \
 "/usr/share/pixmaps/" + icon, \
-HOME + "/.icons/" + THEME + "/status/24x24/" + icon \
+HOME + "/.icons/" + THEME + "/status/24x24/" + icon, \
+HOME + "/.local/share/icons/" + icon, \
+HOME + "/.local/share/icons/hicolor/32x32/apps/" + icon, \
 }
 	
 #define CAT_ICONS_PATHS \
