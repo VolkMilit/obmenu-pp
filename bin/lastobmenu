@@ -1,0 +1,24 @@
+#!/bin/sh
+
+IGNORE="firefox;thunderbird;steam;uplay;keepass;deadbeef;deluge;geany;gimp"
+LAST_FILE=$HOME/.cache/obmenupp-last
+MAX=5
+
+found=0
+count=$(($(echo $IGNORE | tr -d '[a-z]' | wc -m)))
+
+for i in $(seq 1 $count); do
+	fil="$(grep $(echo $IGNORE | cut -d';' -f$i) $1)"
+	[ ! -z "$fil" ] && found=1 && break
+done
+
+"$2" &
+
+[ "$found" = 1 ] && exit 0
+
+sed -i '1 i '$1 $LAST_FILE
+
+sort -u $LAST_FILE | head -n5 > $LAST_FILE".bak"
+mv $LAST_FILE".bak" $LAST_FILE
+
+exit 0

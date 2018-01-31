@@ -1,12 +1,9 @@
-/*https://github.com/benhoyt/inih*/
+/*
+ * leave all hope, if you see this code, you will probably die, you was been warned
+ */
 
-//#include <string>
-//#include <iostream>
-//#include <algorithm>
 #include <vector>
 #include <regex>
-//#include <fstream>
-//#include <sstream>
 #include <experimental/filesystem>
 #include <cstdlib>
 #include <ctime>
@@ -19,8 +16,13 @@
 
 namespace fs = std::experimental::filesystem;
 
+// global
 std::string THEME;
 std::string HOME;
+
+// macros		
+#define MNAME std::string name = ini.Get("Name[en_GB]"); \
+						   if (name.empty()) name = ini.Get("Name");
 
 const std::string getHome()
 {
@@ -189,6 +191,40 @@ int main()
     
     USER_DEFINE // see config.h
 	std::cout << "<separator/>" << std::endl;
+	
+	// lastes files
+	#if DISPLAY_LASTES == 1
+		int lineCount = 0;
+		
+		//if (!fs::exists(HOME + "/.cache/obmenupp-last"))
+		//{
+			std::ifstream is(HOME + "/.cache/obmenupp-last");
+			std::string str;
+	
+			while(getline(is, str))
+			{
+				lineCount += 1;
+				if (!fs::exists(str)) continue;
+		
+				inih ini(str);
+        
+				MNAME
+			
+				if (name.length() >= 15)
+					name = name.erase(15, name.length()) + " ...";
+														 
+				element( \
+					ini.Get("Icon"), \
+					name, \
+					std::regex_replace(ini.Get("Exec"), std::regex(" %[A-z]"), "") \
+				);
+			}
+			
+			if (lineCount >= 2)
+				std::cout << "	<separator/>" << std::endl;
+		//}
+	#endif
+	//------------
     
 	for (const auto & i:cat)
 	{
@@ -206,8 +242,7 @@ int main()
 
 				if (found != std::string::npos)
 				{
-					std::string name = ini.Get("Name[en_GB]");
-					if (name.empty()) name = ini.Get("Name");
+					MNAME
 					
 					for (auto hh : a_hide)
 					{
@@ -219,13 +254,11 @@ int main()
 					}
 					
 					if (!hide && ini.Get("NoDisplay") != "true")
-					{																 
-							element( \
+						element( \
 							ini.Get("Icon"), \
 							name, \
-							std::regex_replace(ini.Get("Exec"), std::regex(" %[A-z]"), "")
-							);
-					}
+							"lastobmenu " + std::string(p.path()) + " " + std::regex_replace(ini.Get("Exec"), std::regex(" %[A-z]"), "") \
+						);
 					
 					hide = false;
 				}
