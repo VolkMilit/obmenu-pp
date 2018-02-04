@@ -1,0 +1,4 @@
+element:Suspend:shutdown:sudo powerctl -poweroff
+element:Reboot:shutdown:sudo powerctl -reboot
+element:Shutdown:shutdown:sudo powerctl -suspend
+element:OpenBox exit:shutdown:openbox --exit

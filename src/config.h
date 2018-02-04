@@ -25,10 +25,10 @@ HOME + "/.local/share/icons/hicolor/32x32/apps/" + icon, \
 { \
 "/usr/share/applications/", \
 "/usr/local/share/applications/", \
-HOME + "/.local/share/applications/", \
-HOME + "/.local/share/applications/Dev/", \
-HOME + "/.local/share/applications/Games/", \
-HOME + "/.local/share/applications/Tools/" \
+menu.HOME + "/.local/share/applications/", \
+menu.HOME + "/.local/share/applications/Dev/", \
+menu.HOME + "/.local/share/applications/Games/", \
+menu.HOME + "/.local/share/applications/Tools/" \
 }
 
 #define CATEGORIES \
@@ -65,11 +65,11 @@ HOME + "/.local/share/applications/Tools/" \
 	HOME + "/.icons/myelementary/status/24/gtk-missing-image.svg"
 
 #define USER_DEFINE \
-	element(getIcon("firefox"), "Веб-браузер", "firejail --no3d firefox"); \
-    element(getIcon("thunderbird"), "Почта", "firejail --no3d thunderbird"); \
-	pipe(getIcon("steam"), "Steam", "/home/volk/Projects/obmenu-generator-pp/obmenu-generator-pp/steam-pipe"); \
-	element(getIcon("keepassx"), "KeePassX", "keepassx"); \
-	element(getIcon("deadbeef"), "DeadBeef", "deadbeef"); \
-	element(getIcon("deluge"), "Deluge", "deluge"); \
-	element(getIcon("geany"), "Geany", "geany"); \
-	element(getIcon("gimp"), "GIMP", "gimp");
+	menu.element(menu.getIcon("firefox"), "Веб-браузер", "firejail --no3d firefox"); \
+    menu.element(menu.getIcon("thunderbird"), "Почта", "firejail --no3d thunderbird"); \
+	menu.pipe(menu.getIcon("steam"), "Steam", "steam-pipe"); \
+	menu.element(menu.getIcon("keepassx"), "KeePassX", "keepassx"); \
+	menu.element(menu.getIcon("deadbeef"), "DeadBeef", "deadbeef"); \
+	menu.element(menu.getIcon("deluge"), "Deluge", "deluge"); \
+	menu.element(menu.getIcon("geany"), "Geany", "geany"); \
+	menu.element(menu.getIcon("gimp"), "GIMP", "gimp");

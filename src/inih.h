@@ -19,10 +19,10 @@ class inih
 			~inih();
 			
 			const std::string Get(const std::string &str);
+			std::vector<std::string> split(const std::string &s, char delim);
 			
 		private:
 			std::string file;
-			std::vector<std::string> split(const std::string &s, char delim);
 };
 
 #endif /* __INI_H__ */
