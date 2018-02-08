@@ -8,7 +8,7 @@ found=0
 count=$(($(echo $IGNORE | tr -d '[a-z]' | wc -m)))
 
 for i in $(seq 1 $count); do
-	fil="$(grep $(echo $IGNORE | cut -d';' -f$i) $1)"
+	fil="$(grep "Exec" | grep $(echo $IGNORE | cut -d';' -f$i))"
 	[ ! -z "$fil" ] && found=1 && break
 done
 
