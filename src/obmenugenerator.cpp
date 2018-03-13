@@ -155,3 +155,31 @@ void obmenugenerator::pipe(const std::string &icon, const std::string &name, con
 {
 		std::cout << "<menu id='" << std::rand() << "' icon='" << icon << "' label='" << name << "' execute=\"/bin/sh -c '" << exec << "'\"/>" << std::endl;
 }
+
+void obmenugenerator::xmlmenu(const std::string &menu, const std::string &icon, const std::string &name)
+{
+		const std::string &path = this->HOME + "/.config/obmenu-generator-pp/" + menu + ".xml";
+		std::string line;
+		
+		std::cout << "<menu id='" << std::rand() << "' icon='" << icon << "' label='" << name << "'>" << std::endl;
+		
+		if (!fs::exists(path))
+		{
+			std::cout << "<item label='No such menu " + menu + ".xml'><action name='Execute'><execute>echo</execute></action></item></menu>" << std::endl;
+			return;
+		}
+		
+		std::ifstream file (this->HOME + "/.config/obmenu-generator-pp/" + menu + ".xml");
+		
+		if (file.is_open())
+		{
+			while (std::getline(file, line))
+			{
+				std::cout << line << std::endl;
+			}
+		}
+		
+		file.close();
+		
+		std::cout << "</menu>" << std::endl;
+}

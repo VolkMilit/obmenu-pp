@@ -1,0 +1,23 @@
+<item icon='/home/volk/.icons/Vimix-beige/apps/32x32/shutdown.svg' label='Suspend'>
+	<action name='Execute'>
+		powerctl -suspend
+	</action>
+</item>
+
+<item icon='/home/volk/.icons/Vimix-beige/apps/32x32/shutdown.svg' label='Reboot'>
+	<action name='Execute'>
+		powerctl -reboot
+	</action>
+</item>
+
+<item icon='/home/volk/.icons/Vimix-beige/apps/32x32/shutdown.svg' label='Power off'>
+	<action name='Execute'>
+		powerctl -poweroff
+	</action>
+</item>
+
+<item icon='/home/volk/.icons/Vimix-beige/apps/32x32/shutdown.svg' label='OpenBox exit'>
+	<action name='Execute'>
+		openbox --exit
+	</action>
+</item>

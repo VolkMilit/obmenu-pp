@@ -64,8 +64,9 @@ menu.HOME + "/.local/share/applications/Tools/" \
 #define MISSING \
 	HOME + "/.icons/myelementary/status/24/gtk-missing-image.svg"
 
+// quick menu top
 #define USER_DEFINE \
-	menu.element(menu.getIcon("firefox"), "Веб-браузер", "firejail --no3d firefox"); \
+	menu.element(menu.getIcon("firefox"), "Веб-браузер", "palemoon-bin"); \
     menu.element(menu.getIcon("thunderbird"), "Почта", "firejail --no3d thunderbird"); \
 	menu.pipe(menu.getIcon("steam"), "Steam", "steam-pipe"); \
 	menu.element(menu.getIcon("keepassx"), "KeePassX", "keepassx"); \
@@ -73,3 +74,7 @@ menu.HOME + "/.local/share/applications/Tools/" \
 	menu.element(menu.getIcon("deluge"), "Deluge", "deluge"); \
 	menu.element(menu.getIcon("geany"), "Geany", "geany"); \
 	menu.element(menu.getIcon("gimp"), "GIMP", "gimp");
+
+// quick menu bottom
+# define USER_DEFINE2 \
+	menu.xmlmenu("shutdown", menu.catIcon("Shutdown"), "Выключение");

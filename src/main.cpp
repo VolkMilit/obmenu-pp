@@ -115,7 +115,7 @@ int main()
 	
 	std::cout << "<separator />" << std::endl;
 	
-	menu.pipe(menu.catIcon("Shutdown"), "Выключение", "shutdown-pipe");
+	USER_DEFINE2 // see config.h
 
     std::cout << "</openbox_pipe_menu>" << std::endl;
     

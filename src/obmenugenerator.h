@@ -13,7 +13,7 @@
 
 namespace fs = std::experimental::filesystem;
 
-class obmenugenerator
+class obmenugenerator final
 {
 	public:
 	obmenugenerator();
@@ -23,6 +23,7 @@ class obmenugenerator
 	std::string getIcon(std::string icon);
 	void element(const std::string &icon, const std::string &name, const std::string &exec);
 	void pipe(const std::string &icon, const std::string &name, const std::string &exec);
+	void xmlmenu(const std::string &menu, const std::string &icon, const std::string &name);	
 	
 	std::string HOME;
 	std::string THEME;
