@@ -58,7 +58,7 @@ const std::string obmenugenerator::catIcon(const std::string &category)
 				
 			if (category ==  "Graphics")
 			{
-				icon = i + "application-graphics.svg";
+				icon = i + "applications-graphics.svg";
 				//break;
 			}
 				
@@ -94,7 +94,7 @@ const std::string obmenugenerator::catIcon(const std::string &category)
 			
 			if (category == "Shutdown")
 			{
-				icon = i + "preferences-tweaks-anim.svg";
+				icon = i + "gnome-shutdown.svg";
 				//break;
 			}
 		//}

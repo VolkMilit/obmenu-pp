@@ -2,22 +2,27 @@
 
 #define ICONS_PATHS \
 { \
-HOME + "/.icons/" + THEME + "/apps/32x32/" + icon, \
-HOME + "/.icons/" + THEME + "/apps/192x192/" + icon, \
-HOME + "/.icons/" + THEME + "/apps/scalable/" + icon, \
-"/usr/share/icons/hicolor/32x32/apps/" + icon, \
-"/usr/share/icons/hicolor/48x48/apps/" + icon, \
-"/usr/share/icons/hicolor/scalable/apps/" + icon, \
-"/usr/lib/python2.7/dist-packages/" + icon + "/data/pixmaps/" + icon, \
-"/usr/share/local/icons/hicolor/32x32/apps/" + icon, \
-"/usr/share/pixmaps/" + icon, \
-HOME + "/.icons/" + THEME + "/status/24x24/" + icon, \
+HOME + "/.icons/" + THEME + "/16x16/categories/" + icon, \
 HOME + "/.local/share/icons/" + icon, \
-HOME + "/.local/share/icons/hicolor/32x32/apps/" + icon, \
+HOME + "/.local/share/icons/hicolor/16x16/apps/" + icon, \
+"/usr/share/icons/hicolor/scalable/apps/" + icon, \
+"/usr/share/icons/hicolor/16x16/apps/" + icon, \
+"/usr/share/local/icons/hicolor/16x16/apps/" + icon, \
+"/usr/share/icons/hicolor/64x64/apps/" + icon, \
+"/usr/share/pixmaps/" + icon, \
 }
+//HOME + "/.icons/" + THEME + "/apps/32x32/" + icon, \
+//HOME + "/.icons/" + THEME + "/apps/192x192/" + icon, \
+//HOME + "/.icons/" + THEME + "/apps/scalable/" + icon, \
+//"/usr/share/icons/hicolor/32x32/apps/" + icon, \
+//"/usr/share/icons/hicolor/48x48/apps/" + icon, \
+//"/usr/lib/python2.7/dist-packages/" + icon + "/data/pixmaps/" + icon, \
+//HOME + "/.icons/" + THEME + "/status/24x24/" + icon, \
+//}
 	
 #define CAT_ICONS_PATHS \
-	HOME + "/.icons/" + THEME + "/categories/scalable/"
+	HOME + "/.icons/" + THEME + "/16x16/categories/"
+	//HOME + "/.icons/" + THEME + "/categories/scalable/"
 //{
 //}
 
